@@ -1,0 +1,5 @@
+name = Csas core
+description = Csas core
+package = Csas
+version = VERSION
+core = 7.x

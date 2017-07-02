@@ -1,0 +1,20 @@
+<?php
+/**
+ * @files
+ * Csas core
+ */
+
+function _csas_cor_add_css($mod = '', $fle = '') {
+  global $theme;
+  if ($mod && $fle) {
+    $pth = drupal_get_path('theme', $theme);
+    $dta = $pth . '/css/' . $theme . '.' . $fle;
+    if (file_exists($dta)) {
+      drupal_add_css($dta);
+    }
+    else {
+      $pth = drupal_get_path('module', $mod);
+      drupal_add_css($pth . "/css/{$fle}");
+    }
+  }
+}
